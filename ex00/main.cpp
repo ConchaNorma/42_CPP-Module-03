@@ -6,34 +6,14 @@
 /*   By: cnorma <cnorma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 20:27:16 by cnorma            #+#    #+#             */
-/*   Updated: 2022/05/05 21:33:25 by cnorma           ###   ########.fr       */
+/*   Updated: 2022/05/07 19:03:54 by cnorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-//int	main( void )
-//{
-//	ClapTrap hob("Fill");
-
-//	hob.attack("Ted");
-//	hob.takeDamage(2);
-//	hob.beRepaired(1);
-//	hob.takeDamage(7);
-//	hob.beRepaired(3);
-//	hob.takeDamage(17);
-
-//	return 0;
-//}
-
-//#include <iostream>
-
-//#include <ClapTrap.hpp>
-
-//#define HEADER() std::cout << "\033[32mSTART : " << __func__ << "\033[0m" << std::endl;
-
 void  Test1(void) {
-  std::cout << "**** TEST1 ****" << std::endl << std::endl;
+  std::cout << "\n**** TEST1 ****" << std::endl << std::endl;
   ClapTrap a("Ivan");
 
   a.attack("fuga");
@@ -50,7 +30,7 @@ void  Test1(void) {
 
 void Test2()
 {
-	std::cout << "**** TEST2 ****" << std::endl << std::endl;
+	std::cout << "\n**** TEST2 ****" << std::endl << std::endl;
 	ClapTrap A("Elik");
 	ClapTrap B("Luk");
 
@@ -82,7 +62,7 @@ void Test2()
 }
 
 void  Test3(void) {
-std::cout << "**** TEST3 ****" << std::endl << std::endl;
+std::cout << "\n**** TEST3 ****" << std::endl << std::endl;
 
   ClapTrap a("hoge");
   ClapTrap b(a);

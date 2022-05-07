@@ -6,7 +6,7 @@
 /*   By: cnorma <cnorma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 20:20:24 by cnorma            #+#    #+#             */
-/*   Updated: 2022/05/05 22:02:26 by cnorma           ###   ########.fr       */
+/*   Updated: 2022/05/07 18:55:31 by cnorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define CLAPTRAP_H
 
 # include <iostream>
-# include <string>
-# include <cmath>
 
 class ClapTrap
 {
@@ -24,6 +22,7 @@ public:
 	ClapTrap(std::string name);
 	ClapTrap& operator=(const ClapTrap &other);
 	ClapTrap(const ClapTrap &other);
+
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
