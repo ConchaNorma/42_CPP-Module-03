@@ -6,42 +6,42 @@
 /*   By: cnorma <cnorma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 20:24:20 by cnorma            #+#    #+#             */
-/*   Updated: 2022/05/05 22:40:50 by cnorma           ###   ########.fr       */
+/*   Updated: 2022/05/07 19:08:00 by cnorma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(): ClapTrap("ScavTrap")
+ScavTrap::ScavTrap(): ClapTrap()
 {
 	std::cout << "ScavTrap called defaut constructor" << std::endl;
-	hit_points = 100;
-	energy_points = 50;
-	attack_points = 20;
+	this->name = "";
+	this->hit_points = 100;
+	this->energy_points = 50;
+	this->attack_points = 20;
 }
 
-ClapTrap::ClapTrap(std::string name): ClapTrap(std::string name)
+ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
 	std::cout << "ScavTrap called NAMED constructor" << std::endl;
-	name = name;
-	hit_points = 100;
-	energy_points = 50;
-	attack_points = 20;
+	this->name = name;
+	this->hit_points = 100;
+	this->energy_points = 50;
+	this->attack_points = 20;
 }
-
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &other)
 {
 	std::cout << "ScavTrap copy assignment operator called" << std::endl;
-	name = other.name;
-	hit_points = other.hit_points;
-	energy_points = other.energy_points;
-	attack_points = other.attack_points;
+	this->name = other.name;
+	this->hit_points = other.hit_points;
+	this->energy_points = other.energy_points;
+	this->attack_points = other.attack_points;
 
 	return *this;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& other)
+ScavTrap::ScavTrap(const ScavTrap &other): ClapTrap(other)
 {
 	std::cout << "ScavTrap copy constructor called" << std::endl;
 	*this = other;
@@ -49,12 +49,12 @@ ScavTrap::ScavTrap(const ScavTrap& other)
 
 void ScavTrap::attack(const std::string& target)
 {
-	if (energy_points <= 0 || hit_points <= 0)
+	if (this->energy_points <= 0 || this->hit_points <= 0)
 		return ;
-	std::cout << "ScavTrap " << name << " attacks " << target;
-	std::cout << " with " << attack_points << " points of damage." << std::endl;
+	std::cout << "ScavTrap " << this->name << " attacks " << target;
+	std::cout << " with " << this->attack_points << " points of damage.";
 	energy_points--;
-	std::cout << "ScavTrap " << name << "'s energy level is " << energy_points << "\n" << std::endl;
+	std::cout << "ScavTrap " << this->name << "'s energy level = " << this->energy_points << std::endl;
 }
 
 void ScavTrap::guardGate()
@@ -64,5 +64,5 @@ void ScavTrap::guardGate()
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << name << ": ScavTrap called Destructor" << std::endl;
+	std::cout << this->name << ": ScavTrap called Destructor" << std::endl;
 }
